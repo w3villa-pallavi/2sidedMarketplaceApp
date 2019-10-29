@@ -1,0 +1,15 @@
+<%= render "layouts/header" %>
+
+<p>This is the home page. Need to have links to other parts of the application including to the index</p>
+
+
+<% if current_runner %>
+
+<%= link_to "Sign out", destroy_runner_session_path, method: :delete %>
+
+<% else %>
+
+<%= link_to "Sign in", new_runner_session_path %>
+<%= link_to "Sign Up", new_runner_registration_path %>
+
+<% end %>

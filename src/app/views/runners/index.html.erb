@@ -1,0 +1,24 @@
+<%= render "layouts/header" %>
+
+<h1>Runners#index</h1>
+
+<% @runners.each do |r|%> 
+<p>
+Username: <%= r.username %> 
+</p>   
+<hr>
+<ul>
+    <li>
+        <figure class="image is-64x64">
+            Profile Photo: <%= r.image.attached? ? image_tag(r.image) : "" %>
+        </figure>
+
+        
+    </li>
+    <li> First name: <%= r.first_name %> </li>
+    <li> Last name: <%= r.last_name %> </li>
+    <li> Email: <%= r.email %> </li>
+   
+</ul>
+<% end %>
+
