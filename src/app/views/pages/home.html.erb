@@ -1,15 +1,38 @@
-<%= render "layouts/header" %>
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+            <header>
+                <%= render "layouts/header" %>
+            </header>
+            
+         <section>
+                <div class="sign_in-out-up">
 
-<p>This is the home page. Need to have links to other parts of the application including to the index</p>
+                        <p>This is the home page. Need to have links to other parts of the application including to the index</p>
+                        <% if current_runner %>
+                        <%= link_to "Sign out", destroy_runner_session_path, method: :delete %>
+                        <% else %>
+                        <%= link_to "Sign in", new_runner_session_path %>
+                        <%= link_to "Sign Up", new_runner_registration_path %>
+                        <% end %>
+                 </div>
 
 
-<% if current_runner %>
+         </section>   
+        
+            
 
-<%= link_to "Sign out", destroy_runner_session_path, method: :delete %>
 
-<% else %>
+        
+        <script src="" async defer></script>
+    </body>
+</html>
 
-<%= link_to "Sign in", new_runner_session_path %>
-<%= link_to "Sign Up", new_runner_registration_path %>
-
-<% end %>

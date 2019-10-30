@@ -15,7 +15,7 @@
     <nav class= "level has-background-info">
         <p> <strong>TEMPORARY NAV</strong></p>
         <% if runner_signed_in?%>
-        <p> Hello, <% current_runner.email %></p>
+        <p> Hello, <%= current_runner.first_name %></p>
       <% end %>
         <ul>
             <li><%= link_to("HOME", root_path) %></li>
@@ -25,9 +25,6 @@
             <li><%= link_to("EDIT PROFILE", edit_runner_path(current_runner)) %></li>
             <% end %> 
         </ul>
-        <% if runner_signed_in?%>
-        <p> Hello, <% current_runner.first_name %></p>
-      <% end %>
     </nav>
 
     <%= yield %>

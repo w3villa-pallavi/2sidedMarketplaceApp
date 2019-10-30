@@ -10,16 +10,21 @@ class RunnersController < ApplicationController
 
   def new
     @runner = Runner.new
+    @runner.user_id = current_user.id
   end
 
   def create
     @runner = Runner.new(runner_params)
     @runner.image.attach(runner_params[:image])
     @runner.save 
-    if @runner.save
-      redirect_to(runners_path)
-    else
-      render("new")
+    respond_to do |format|
+      if @runner.save
+        format.html { redirect_to runners_path, notice: 'Profile was successfully created.' }
+        format.json { render :index, status: :created, location: @runner }
+      else
+        format.html { render :new }
+        format.json { render json: @runner.errors, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -32,13 +37,15 @@ class RunnersController < ApplicationController
       @runner.update(runner_params)
       @runner.image.attach(runner_params[:image]) if runner_params[:image] 
       @runner.save
-    if @runner.save
-      flash[:notice] = "You've updated your profile"
-      redirect_to(runner_path(@runner))
-    else
-      flash[:notice] = "Edit failed. Try again"
-      render("edit")
-    end
+      respond_to do |format|
+        if @runner.update(runner_params)
+          format.html { redirect_to @runner, notice: 'Profile was successfully updated.' }
+          format.json { render :show, status: :ok, location: @runner }
+        else
+          format.html { render :edit }
+          format.json { render json: @runner.errors, status: :unprocessable_entity }
+        end
+      end
   end
 
   def delete
@@ -47,8 +54,10 @@ class RunnersController < ApplicationController
   
   def destroy
     @runner.destroy
-    flash[:notice] = "Your account is deleted!"
-    redirect_to(runners_path) 
+    respond_to do |format|
+      format.html { redirect_to runners_url, notice: 'Profile was successfully destroyed.' }
+      format.json { head :no_content }
+    end
   end
 
   private 
