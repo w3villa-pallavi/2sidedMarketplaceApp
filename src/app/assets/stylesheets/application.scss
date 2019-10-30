@@ -13,8 +13,8 @@
  *= require_tree .
  *= require_self
  */
- body {
-    nav {
+body {
+  nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -23,19 +23,16 @@
     padding-left: 20px;
     padding-right: 20px;
     #title {
-        font-size: 4rem;
-        color: orange;
+      font-size: 4rem;
+      color: orange;
     }
-.links {
-    color: orange;
-    &:hover {
+    .links {
+      color: orange;
+      &:hover {
         color: yellow;
+      }
     }
+  }
 }
-}
-}
 
- @import 'bulma'
-
-
-
+@import "bulma";

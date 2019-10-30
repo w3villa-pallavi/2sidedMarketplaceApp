@@ -12,21 +12,22 @@
             <header>
                 <%= render "layouts/header" %>
             </header>
+        <section>
+            <div class="home-intro-pics">
+                <div id="profile-img">
+                    <%= link_to image_tag("running_forest.jpg", :alt => "running in forest"), runner_path(current_runner) %>
+                </div>
+                <div id="search-img">
+                        <%= link_to image_tag("running_partner.jpg", :alt => "running in forest"), runners_path %>
+                </div>
+                <div id="other-img">
+                        <%= link_to image_tag("running_forest.jpg", :alt => "running in forest"), runners_path %>
+                </div>
+            </div>
             
-         <section>
-                <div class="sign_in-out-up">
-
-                        <p>This is the home page. Need to have links to other parts of the application including to the index</p>
-                        <% if current_runner %>
-                        <%= link_to "Sign out", destroy_runner_session_path, method: :delete %>
-                        <% else %>
-                        <%= link_to "Sign in", new_runner_session_path %>
-                        <%= link_to "Sign Up", new_runner_registration_path %>
-                        <% end %>
-                 </div>
-
-
-         </section>   
+            
+    
+        </section>   
         
             
 

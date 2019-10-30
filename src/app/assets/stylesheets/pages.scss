@@ -3,14 +3,44 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-    section {
-        background-image: url(image_path('dark_city.jpg'));
-        background-size: 100%;
-        .sign_in-out-up {
-            
-        }
+  .home-intro-pics {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-around;
+    background-color: rgb(255, 255, 255);
+    background-image: url(image_path('brooklyn_bridge.jpg'));
+    background-color: rgba(255, 166, 0, 0.425);
+    background-blend-mode: soft-light;
+    background-size: cover;
+    height: 100vh;
+ 
+
+    #profile-img {
+        justify-self: center;
+        align-self: center;
+        width: 80%;
+        transition: transform .5s;
+        &:hover {
+            transform: scale(1.1); 
+          }
     }
-
-
+    #search-img {
+        justify-self: center;
+        align-self: center;
+        width: 80%;
+        transition: transform .5s;
+        &:hover {
+            transform: scale(1.1); 
+          }
+    }
+    #other-img {
+        justify-self: center;
+        align-self: center;
+        width: 80%;
+        transition: transform .5s;
+        &:hover {
+            transform: scale(1.1); 
+          }
+    }
+  }
 }
-
