@@ -12,17 +12,17 @@
   </head>
 
   <body>
-    <nav class= "level has-background-info">
-        <p> <strong>TEMPORARY NAV</strong></p>
+    <nav class= "header">
         <% if runner_signed_in?%>
-        <p> Hello, <%= current_runner.first_name %></p>
-      <% end %>
+        <p> Current User: <%= current_runner.first_name %></p>
+        <% end %>
+        <p id="title">Runnerfy</p>
         <ul>
-            <li><%= link_to("HOME", root_path) %></li>
-            <li><%= link_to("ALL USERS", runners_path) %></li>
+            <li><%= link_to("HOME", root_path, class: "links") %></li>
+            <li><%= link_to("ALL USERS", runners_path, class: "links") %></li>
 
             <%if current_runner %>
-            <li><%= link_to("EDIT PROFILE", edit_runner_path(current_runner)) %></li>
+            <li><%= link_to("EDIT PROFILE", edit_runner_path(current_runner), class: "links") %></li>
             <% end %> 
         </ul>
     </nav>
