@@ -3,44 +3,158 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-  .home-intro-pics {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-content: space-around;
-    background-color: rgb(255, 255, 255);
-    background-image: url(image_path('brooklyn_bridge.jpg'));
-    background-color: rgba(255, 166, 0, 0.425);
-    background-blend-mode: soft-light;
-    background-size: cover;
-    height: 100vh;
- 
+  section {
+    .home-intro-pics {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      justify-content: space-around;
+      background-color: rgb(255, 255, 255);
+      background-image: url(image_path("brooklyn_bridge.jpg"));
+      background-color: rgba(255, 166, 0, 0.425);
+      background-blend-mode: soft-light;
+      background-size: cover;
+      height: 100vh;
 
-    #profile-img {
+      #profile-img {
         justify-self: center;
         align-self: center;
         width: 80%;
-        transition: transform .5s;
+        transition: transform 0.5s;
+        // display: inline-block;
+        background: rgba(255, 187, 0, 0.363);
+        position: relative;
+        #overlay1 {
+          position: absolute;
+          display: none;
+          //     padding: 6rem;
+          //     top: 0;
+          //     left: 0;
+          //     bottom: 0;
+          //     width: 100%;
+          //     color: #fff;
+          //     font-size: 5rem;
+          //     opacity: 0;
+          //     h2 {font-weight: bold;
+        }
+        //   }
         &:hover {
-            transform: scale(1.1); 
+          transform: scale(1.05);
+          #overlay1 {
+            display: normal;
           }
+          // #img1 {
+          //   filter: blur(1px);
+          //   display: block;
+          //   width: 100%;
+          //   opacity: 0.6;
+          // }
+          // #overlay1 {
+          //   opacity: 1;
+          // }
+        }
+      }
+      #search-img {
+        justify-self: center;
+        align-self: center;
+        width: 80%;
+        transition: transform 0.5s;
+        // display: inline-block;
+        background: rgb(255, 187, 0);
+
+        // #overlay2 {
+        //   position: absolute;
+        //   padding: 6rem;
+        //   top: 0;
+        //   left: 0;
+        //   bottom: 0;
+        //   width: 100%;
+        //   color: #fff;
+        //   font-size: 5rem;
+        //   opacity: 0;
+        //   h2 {font-weight: bold;
+        //   }
+        // }
+        &:hover {
+          transform: scale(1.05);
+          //   #img2 {
+          //     filter: blur(1px);
+          //     display: block;
+          //     width: 100%;
+          //     opacity: 0.6;
+          //   }
+          //   #overlay2 {
+          //     opacity: 1;
+          //   }
+        }
+      }
+      #other-img {
+        justify-self: center;
+        align-self: center;
+        width: 80%;
+        transition: transform 0.5s;
+        // display: inline-block;
+        background: rgb(255, 187, 0);
+        h2 {
+          position: absolute;
+          display: none;
+        }
+
+        // #overlay3 {
+        //     position: absolute;
+        //     padding: 6rem;
+        //     top: 0;
+        //     left: 0;
+        //     bottom: 0;
+        //     width: 100%;
+        //     color: #fff;
+        //     font-size: 5rem;
+        //     opacity: 0;
+        //     h2 {font-weight: bold;
+        //     }
+        //   }
+        &:hover {
+          transform: scale(1.05);
+          #img3 {
+            filter: blur(1px);
+            display: block;
+            width: 100%;
+            opacity: 0.6;
+          }
+          h2 {
+            display: normal;
+          }
+          // #overlay3 {
+          //   opacity: 1;
+          // }
+        }
+      }
     }
-    #search-img {
-        justify-self: center;
-        align-self: center;
-        width: 80%;
-        transition: transform .5s;
-        &:hover {
-            transform: scale(1.1); 
-          }
-    }
-    #other-img {
-        justify-self: center;
-        align-self: center;
-        width: 80%;
-        transition: transform .5s;
-        &:hover {
-            transform: scale(1.1); 
-          }
+    #other-links {
+        background-color: rgb(236, 236, 236);
+        height: 500px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 50px;
+        font-variant: small-caps;
+        font-family: Didot, serif;
+        font-size: 3rem;
+        color: black;
+       
+        div {
+            align-self: center;
+            justify-self: center;
+        }
+        #box1 {
+        display: grid;
+        grid-template-areas: 1fr 
+                            1fr;
+        #box2 {
+            border-left: thick solid #ff0000;
+        }
+        #friends-icon {
+            align-self: end;
+        }
+        }
     }
   }
 }

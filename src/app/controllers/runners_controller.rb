@@ -10,7 +10,8 @@ class RunnersController < ApplicationController
 
   def new
     @runner = Runner.new
-    @runner.user_id = current_user.id
+    @runner.id = current_runner.id
+    #Is this okay above? Needed. What do? 
   end
 
   def create
