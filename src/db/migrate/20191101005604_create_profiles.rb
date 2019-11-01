@@ -4,6 +4,7 @@ class CreateProfiles < ActiveRecord::Migration[5.2]
       t.string :username
       t.integer :age
       t.string :gender
+      t.references :runner, foreign_key: true
 
       t.timestamps
     end

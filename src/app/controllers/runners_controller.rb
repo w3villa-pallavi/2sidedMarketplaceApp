@@ -10,7 +10,7 @@ class RunnersController < ApplicationController
 
   def new
     @runner = Runner.new
-    @runner.id = current_runner.id
+    @runner.build_profile
     #Is this okay above? Needed. What do? 
   end
 
@@ -64,6 +64,6 @@ class RunnersController < ApplicationController
   private 
 
   def runner_params
-    params.require(:runner).permit(:username, :first_name, :last_name, :email, :bio, :image)
+    params.require(:runner).permit(:username, :first_name, :last_name, :email, :bio, :image, profile_attributes:[:username, :age, :gender])
   end
 end

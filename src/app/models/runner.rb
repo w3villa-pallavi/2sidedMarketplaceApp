@@ -1,7 +1,14 @@
 class Runner < ApplicationRecord
+  
   rolify
+  has_one :profile, :dependent => :destroy
+  before_create :create_profile
 
-  has_one :profile
+  def create_profile
+    profile = build_profile 
+  end
+  
+  accepts_nested_attributes_for :profile
 
   after_create :assign_default_role
 
@@ -16,5 +23,4 @@ class Runner < ApplicationRecord
     def assign_default_role
       self.add_role(:runner) if self.roles.blank?
     end
-
 end
