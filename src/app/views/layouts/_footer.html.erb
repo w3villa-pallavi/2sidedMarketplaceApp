@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+ <html class="no-js"> 
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+
+            <nav class= "header">
+                    <% if runner_signed_in?%>
+                    <p> Current User: <%= current_runner.first_name %></p>
+                    <% else %>
+                    <p></p>
+                    <% end %>
+                    <p id="title">Runnerfy</p>
+                    <ul>
+                        <li><%= link_to("HOME", root_path, class: "links") %></li>
+                        <li><%= link_to("ALL USERS", runners_path, class: "links") %></li>
+                        <li><%= link_to("ABOUT US", pages_about_us_path, class: "links") %></li>
+            
+                        <%if current_runner %>
+                        <li><%= link_to("EDIT PROFILE", edit_runner_path(current_runner), class: "links") %></li>
+                        <% end %> 
+                        <li>
+                            <% if current_runner %>
+                            <%= link_to "SIGN OUT", destroy_runner_session_path, method: :delete, class: "links" %>
+                            <% else %>
+                            <%= link_to "SIGN IN", new_runner_session_path, class: "links" %>
+                            <br>
+                            <%= link_to "SIGN UP", new_runner_registration_path, class: "links" %>
+                            <% end %>
+                        </li>
+                    </ul>
+                </nav>
+
+
+
+    </body>
+</html>

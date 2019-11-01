@@ -22,6 +22,7 @@
         <ul>
             <li><%= link_to("HOME", root_path, class: "links") %></li>
             <li><%= link_to("ALL USERS", runners_path, class: "links") %></li>
+            <li><%= link_to("ABOUT US", pages_about_us_path, class: "links") %></li>
 
             <%if current_runner %>
             <li><%= link_to("EDIT PROFILE", edit_runner_path(current_runner), class: "links") %></li>
