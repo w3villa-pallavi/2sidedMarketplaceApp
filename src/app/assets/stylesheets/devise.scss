@@ -1,0 +1,123 @@
+body {
+  section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    height: 100vh;
+    #login-left {
+      .field {
+        font-family: didot, serif;
+        color: black;
+      }
+      .actions {
+        input {
+        font-family: didot, serif;
+        color: black;
+        background: rgba(255, 217, 0, 0.658);
+        }
+    }
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      background: transparent;
+      #login-left-top {
+        grid-area: 1/1/2/4;
+        justify-self: center;
+        align-self: center;
+      }
+      #login-left-left {
+        background: transparent;
+      }
+      #login-left-center {
+          padding: 20px 40px 20px 40px;
+        background: rgba(128, 128, 128, 0.322);
+        align-self: center;
+        justify-self: center;
+      }
+      #login-left-right {
+        background: transparent;
+      }
+    }
+    #login-right {
+      background-image: url(image_path("runner_looking.jpg"));
+      background-size: cover;
+      background-image: center center;
+      background-color: rgba(255, 187, 0, 0.377);
+      background-blend-mode: luminosity;
+    }
+  }
+}
+@media only screen and (min-width: 651px) and (max-width: 1200px) {
+  body {
+    background-image: url(image_path("runner_looking.jpg"));
+    background-size: cover;
+    background-image: center center;
+    background-color: rgba(255, 187, 0, 0.377);
+    background-blend-mode: luminosity;
+    section {
+      #login-right {
+        background: none;
+      }
+      #login-left {
+        grid-area: 1/1/2/3;
+
+        #login-left-center {
+          background: rgba(255, 255, 255, 0.452);
+       
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  body {
+    background-image: url(image_path("running_login_mobile.jpg"));
+    background-size: cover;
+    background-image: center center;
+    background-color: rgba(255, 187, 0, 0.76);
+    background-blend-mode: luminosity;
+    section {
+      #login-left {
+        .field {
+          font-family: didot, serif;
+          color: black;
+          font-size: 3rem;
+          margin-left: 20px;
+          input {
+            
+                width: 95%;
+                height: 3rem;
+                font-size: 2rem;
+          
+          }
+        }
+        .box-field 
+        {
+            margin-left: 20px;
+            font-size: 1.5rem;
+        }
+        .actions {
+            input {
+            font-family: didot, serif;
+            color: black;
+            font-size: 2rem;
+
+            margin-left: 20px;
+            }
+        }
+      }
+
+      #login-right {
+        background: none;
+      }
+      #login-left {
+        grid-area: 1/1/2/3;
+
+        #login-left-center {
+          background: rgba(255, 255, 255, 0.452);
+          grid-area: 2/1/100/100;
+          justify-self: stretch;
+        }
+      }
+    }
+  }
+}
