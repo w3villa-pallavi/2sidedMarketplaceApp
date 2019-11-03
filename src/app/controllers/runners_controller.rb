@@ -1,7 +1,8 @@
 class RunnersController < ApplicationController
     before_action :authenticate_runner!
   def index
-    @runners = Runner.sorted 
+    @search = Runner.search(params[:q])
+    @runners= @search.result
   end
 
   def show
@@ -64,6 +65,6 @@ class RunnersController < ApplicationController
   private 
 
   def runner_params
-    params.require(:runner).permit(:username, :first_name, :last_name, :email, :bio, :image, profile_attributes:[:username, :age, :gender])
+    params.require(:runner).permit(:username, :first_name, :last_name, :email, :bio, :image, profile_attributes:[:username, :age, :gender, :pace])
   end
 end

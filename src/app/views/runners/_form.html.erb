@@ -8,13 +8,18 @@
 
 <div>
     <%= f.label :age %>
-    <%= f.number_field :age %>
+    <%= f.select :age, Runner::AGE_RANGE %>
 </div>
 
 <div>
     <%= f.label :gender %>
-    <%= f.text_field :gender %>
+    <%= f.select :gender, Runner::GENDER_OPTIONS %>
 </div>
+<div>
+    <%= f.label :pace %>
+    <%= f.select :pace, Runner::TRAINING_PACE_LIST %>
+</div>
+
 <% end %>
 <div>
     <%= f.submit %>

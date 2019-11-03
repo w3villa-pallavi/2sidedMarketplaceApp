@@ -8,29 +8,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="">
   </head>
-  <body>
-
+  <body class="devise-body">
       <section class="login-grid">
       <div id="login-left">
           <div id="login-left-top">
-            
-            <p>Welcome to</p> <img src="" alt="">
-            <p>(Insert Logo here)</p>
-            <p>Find, connect, and train with your next running teammate</p>
-
+            <div id="login-left-top-welcome">
+                <div id="welcome-welcome"><h1>WELCOME TO</h1></div>
+                <div id="welcome-img"><%= image_tag("logo_template.png", :alt => "running logo") %> </div>
+                <div id="welcome-tagline"><h2>CONNECT, TRAIN, SUCCEED</h2></div>
+            </div>
           </div>
-          <div id="login-left-left">L LL</div>
+          <div id="login-left-left"></div>
           <div id="login-left-center">
-
+              <p>Runner Login</p>
               <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
               <div class="field">
-                <%= f.label :email %><br />
-                <%= f.email_field :email, autofocus: true, autocomplete: "email"%>
+              
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", :placeholder => "Email"%>
               </div>
             
               <div class="field">
-                <%= f.label :password %><br />
-                <%= f.password_field :password, autocomplete: "current-password" %>
+              
+                <%= f.password_field :password, autocomplete: "current-password", :placeholder => "Password" %>
               </div>
             
               <% if devise_mapping.rememberable? %>
@@ -48,9 +47,9 @@
             <%= render "devise/shared/links" %>
 
           </div>
-          <div id="login-left-right">L LR</div>
+          <div id="login-left-right"></div>
       </div>
-      <div id="login-right">L R </div>
+      <div id="login-right"></div>
     
       
       </section>

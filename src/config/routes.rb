@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
-  
+  root "pages#home"
+
+  get 'profiles/index'
+  get 'profiles/show'
+
   devise_for :runners
   
-  root "pages#home"
+
   get "pages/about_us"
 
   resources :runners do
