@@ -34,7 +34,6 @@ O2	A third party API (e.g. Omniauth, Geocoding, Maps, etc).
 O3	Transactional emails (eg. using Mailgun).
 O4	Searching, sorting and/or filtering capability.
 O5	Internal user messaging system within the app.
-O6	Internal user messaging system within the app.
 O7	Admin dashboard for the admin user to administer the site.
 Documentation Requirements
 Documentation for this project must be supplied as part of the following documents:

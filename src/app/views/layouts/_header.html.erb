@@ -18,7 +18,7 @@
         <% else %>
         <p></p>
         <% end %>
-        <p id="title">Co. name here</p>
+        <p id="title"><%= image_tag("Runnerfy_logo_app.png", :alt => "runnerfy_logo", id: "img1") %></p>
         <ul>
             <li><%= link_to("HOME", root_path, class: "links") %></li>
             <li><%= link_to("ALL USERS", runners_path, class: "links") %></li>
