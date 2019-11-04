@@ -2,8 +2,6 @@
 
 <h1>Runners#index</h1>
 
-
-
 <%= search_form_for @search do |f| %>
 
     <%= f.label :email_cont %>
@@ -24,3 +22,11 @@
 <% end %> 
 </table>
 
+
+<% @runners.each do |runner| %>
+    <tr>
+        <td><%= runner.username %>
+    </tr>
+<% end %> 
+
+</table>

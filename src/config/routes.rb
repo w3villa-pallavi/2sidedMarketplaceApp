@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
   root "pages#home"
 
-  get 'profiles/index'
-  get 'profiles/show'
-
+  resources :profiles
+  
   devise_for :runners
   
 

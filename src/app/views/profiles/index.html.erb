@@ -1,24 +1,34 @@
 <h1>Profiles#index</h1>
-<p>Find me in app/views/profiles/index.html.erb</p>
-
-
 
 <%= search_form_for @search do |f| %>
 
-    <%= f.label :email_cont %>
-    <%= f.text_field :email_cont %>
+ <%= f.collection_select :username_eq, Profile.all, :id, :username, include_blank: true %>
+ <%= f.collection_select :pace_eq, Profile.all, :id, :pace, include_blank: true %>
+ <%= f.collection_select :gender_eq, Profile.all, :id, :gender, include_blank: true %>
 
     <%= f.submit "Search" %>
 
 <% end %>
 
 <table>
+    <thead>
     <tr>
-        <th>email</th>
+     <th>username   .</th>
+        <th>pace   .</th>
+        <th>gender   .</th>
     </tr>
-<% @runners.each do |runner| %>
+        </thead>
+        <tbody>
+<% @profile.each do |profile| %>
     <tr>
-        <td><%= runner.email %>
+        <td><%= profile.username %>
+         <td><%= profile.pace %>
+        <td><%= profile.gender %>
     </tr>
 <% end %> 
+ </tbody>
 </table>
+
+
+
+
