@@ -2,7 +2,14 @@ Rails.application.routes.draw do
   root "pages#home"
 
   resources :profiles
-  
+
+  get "subscribers/complete"
+  get "subscribers/cancel"
+  resources :subscribers
+
+
+
+
   devise_for :runners
   
 
