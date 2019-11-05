@@ -8,16 +8,16 @@
 
 <div>
     <%= f.label :age %>
-    <%= f.select :age, Runner::AGE_RANGE %>
+    <%= f.select :age, Profile::AGE_RANGE %>
 </div>
 
 <div>
     <%= f.label :gender %>
-    <%= f.select :gender, Runner::GENDER_OPTIONS %>
+    <%= f.select :gender, Profile::GENDER_OPTIONS %>
 </div>
 <div>
     <%= f.label :pace %>
-    <%= f.select :pace, Runner::TRAINING_PACE_LIST %>
+    <%= f.select :pace, Profile::TRAINING_PACE_LIST %>
 </div>
 <div>
     <%= f.label :image %>

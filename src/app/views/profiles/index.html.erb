@@ -1,10 +1,28 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body> 
+            <header>
+                <%= render "layouts/header" %>
+            </header>
+
 <h1>Profiles#index</h1>
 
 <%= search_form_for @search do |f| %>
 
- Pace: <%= f.select(:pace_eq, options_for_select([['male', 'male'], ["female", "female"]]), {include_blank: true}) %>
- <%= f.collection_select :pace_eq, Profile.all, :id, :pace, include_blank: true %>
- <%= f.collection_select :gender_eq, Profile.all, :id, :gender, include_blank: true %>
+ Pace: <%= f.select(:pace_eq, options_for_select([
+ ["< 3min/km", "< 3min/km"], ["3-4min/km", "3-4min/km"], ["4-5min/km", "4-5min/km"], ["5-6min/km", "5-6min/km"],
+ ["6-7min/km", "6-7min/km"], ["7-8min/km", "7-8min/km"], ["8-9min/km", "8-9min/km"], ["9-10min/km", "9-10min/km"],
+ ["walking", "walking"]]), {include_blank: true}) %>
+ <% f.collection_select :pace_eq, Profile.all, :id, :pace, include_blank: true %>
+ <% f.collection_select :gender_eq, Profile.all, :id, :gender, include_blank: true %>
  Gender: <%= f.select(:gender_eq, options_for_select([['male', 'male'], ["female", "female"]]), {include_blank: true}) %>
 
     <%= f.submit "Search" %>
@@ -13,14 +31,14 @@
 
 
 only want these to show if admin or after doing a search. Can't view all all the time? Leave if no time to fix.
-
-<table>
+<div class="table-container"></div>
+<table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
     <thead>
-    <tr>
-     <th>username   .</th>
-        <th>pace   .</th>
-        <th>gender   .</th>
-        <th>profile-pic   .</th>
+    <tr >
+        <th>username</th>
+        <th>pace</th>
+        <th>gender</th>
+        <th>profile-pic</th>
     </tr>
         </thead>
         <tbody>
@@ -34,7 +52,8 @@ only want these to show if admin or after doing a search. Can't view all all the
 <% end %> 
  </tbody>
 </table>
+</div>
 
-
-
+</body>
+</html>
 

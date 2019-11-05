@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-
+  before_action :authenticate_runner!
 
   # def show
   #   @profile = Runner.find(params[:id])
