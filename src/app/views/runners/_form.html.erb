@@ -19,6 +19,10 @@
     <%= f.label :pace %>
     <%= f.select :pace, Runner::TRAINING_PACE_LIST %>
 </div>
+<div>
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+</div>
 
 <% end %>
 <div>

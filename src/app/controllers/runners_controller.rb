@@ -7,6 +7,7 @@ class RunnersController < ApplicationController
 
   def show
     @runner = Runner.find(params[:id])
+    redirect_to(profile_path(@runner.profile))
   end
 
   def new
@@ -21,7 +22,7 @@ class RunnersController < ApplicationController
     @runner.save 
     respond_to do |format|
       if @runner.save
-        format.html { redirect_to runners_path, notice: 'Profile was successfully created.' }
+        format.html { redirect_to profiles_path, notice: 'Profile was successfully created.' }
         format.json { render :index, status: :created, location: @runner }
       else
         format.html { render :new }
@@ -41,7 +42,7 @@ class RunnersController < ApplicationController
       @runner.save
       respond_to do |format|
         if @runner.update(runner_params)
-          format.html { redirect_to @runner, notice: 'Profile was successfully updated.' }
+          format.html { redirect_to root_path, notice: 'Profile was successfully updated.' }
           format.json { render :show, status: :ok, location: @runner }
         else
           format.html { render :edit }
@@ -65,6 +66,6 @@ class RunnersController < ApplicationController
   private 
 
   def runner_params
-    params.require(:runner).permit(:username, :first_name, :last_name, :email, :bio, :image, profile_attributes:[:username, :age, :gender, :pace])
+    params.require(:runner).permit(:username, :first_name, :last_name, :email, :bio, :image, profile_attributes:[:username, :age, :gender, :pace, :image])
   end
 end

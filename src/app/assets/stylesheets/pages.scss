@@ -10,7 +10,7 @@ body {
       justify-content: space-around;
       background-color: rgb(255, 255, 255);
       background-image: url(image_path("brooklyn_bridge.jpg"));
-      background-color: rgba(255, 166, 0, 0.425);
+      background-color: rgba(203, 190, 14, 0.411);
       background-blend-mode: soft-light;
       background-size: cover;
       height: 100vh;
@@ -21,12 +21,17 @@ body {
         width: 80%;
         transition: transform 0.5s;
         // display: inline-block;
-        background: rgb(255, 187, 0);
+        background:rgb(203, 190, 14);
         position: relative;
         #overlay1 {
-          // position: absolute;
-          display: none;
-          padding: 6rem;
+          position: absolute;
+          a {text-decoration: none;}
+          h1 {
+         
+          color: yellow;
+          height: 500px;
+          &:hover {color: white;}}
+         padding: 4rem;
           top: 0;
           left: 0;
           bottom: 0;
@@ -41,9 +46,10 @@ body {
           transform: scale(1.05);
           #overlay1 {
             display: inline-block;
+            h1 {font-size: 6rem;}
           }
           #img1 {
-            filter: blur(1px);
+      
             display: block;
             width: 100%;
           }
@@ -63,28 +69,30 @@ body {
         align-self: center;
         width: 80%;
         transition: transform 0.5s;
+        h1 {font-size: 0rem;}
         // display: inline-block;
-        background: rgb(255, 187, 0);
-        // #overlay2 {
-        //   position: relative;
-        //   padding: 6rem;
-        //   top: 0;
-        //   left: 0;
-        //   bottom: 0;
-        //   width: 100%;
-        //   color: #fff;
-        //   font-size: 5rem;
-        // //   opacity: 0;
-        // //   h2 {font-weight: bold;
-        //   }
+        background:  rgb(203, 190, 14);
+        #overlay2 {
+          h1 {font-size: 0rem;}
+          padding: 6rem;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          color: #fff;
+          font-size: 0rem;
+          }
         // }
         &:hover {
           transform: scale(1.05);
+          #overlay2 {
+            display: inline-block;
+            h1 {font-size: 6rem;}
+          }
           #img2 {
-            // filter: blur(1px);
+            opacity: 0.8;
             display: block;
             width: 100%;
-            opacity: 0;
           }
 
           //   #img2 {
@@ -101,7 +109,7 @@ body {
         width: 80%;
         transition: transform 0.5s;
         // display: inline-block;
-        background: rgb(255, 187, 0);
+        background: rgb(203, 190, 14);
         h2 {
           position: absolute;
           display: none;
@@ -179,7 +187,7 @@ body {
         background-repeat: no-repeat;
         background-position: center center;
         #about-us-top-pic-overlay {
-          color: orange;
+          color: rgb(203, 190, 14);
           h1 {
             font-size: 3.5rem;
             font-weight: bold;

@@ -1,5 +1,6 @@
 class Profile < ApplicationRecord
   belongs_to :runner
+  has_one_attached :image
 
   validates_uniqueness_of :runner_id 
   validates :runner_id, presence: true
