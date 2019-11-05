@@ -2,9 +2,10 @@
 
 <%= search_form_for @search do |f| %>
 
- <%= f.collection_select :username_eq, Profile.all, :id, :username, include_blank: true %>
+ Pace: <%= f.select(:pace_eq, options_for_select([['male', 'male'], ["female", "female"]]), {include_blank: true}) %>
  <%= f.collection_select :pace_eq, Profile.all, :id, :pace, include_blank: true %>
  <%= f.collection_select :gender_eq, Profile.all, :id, :gender, include_blank: true %>
+ Gender: <%= f.select(:gender_eq, options_for_select([['male', 'male'], ["female", "female"]]), {include_blank: true}) %>
 
     <%= f.submit "Search" %>
 
@@ -12,6 +13,7 @@
 
 
 only want these to show if admin or after doing a search. Can't view all all the time? Leave if no time to fix.
+
 <table>
     <thead>
     <tr>

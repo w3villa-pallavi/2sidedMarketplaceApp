@@ -21,12 +21,12 @@
         <p id="title"><%= image_tag("Runnerfy_logo_app.png", :alt => "runnerfy_logo", id: "img1") %></p>
         <ul>
             <li><%= link_to("HOME", root_path, class: "links") %></li>
-            <li><%= link_to("ALL USERS", profiles_path, class: "links") %></li>
+            <li><%= link_to("SEARCH", profiles_path, class: "links") %></li>
             <li><%= link_to("ABOUT US", pages_about_us_path, class: "links") %></li>
 
             <%if current_runner %>
             <li><%= link_to("EDIT PROFILE", edit_runner_path(current_runner), class: "links") %></li>
-            <li><%= link_to("SHOW", runner_path(current_runner), class: "links") %></li>
+            <li><%= link_to("MY PROFILE", runner_path(current_runner), class: "links") %></li>
             <% end %> 
             <li>
                 <% if current_runner %>
