@@ -58,7 +58,6 @@ class ProfilesController < ApplicationController
   #   end
   # end
 
-
   def index
     @search = Profile.search(params[:q])
     @profile = @search.result

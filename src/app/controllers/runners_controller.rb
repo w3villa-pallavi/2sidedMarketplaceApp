@@ -18,10 +18,9 @@ class RunnersController < ApplicationController
 
   def create
     @runner = Runner.new(runner_params)
-    @runner.image.attach(runner_params[:image])
-    @runner.save 
     respond_to do |format|
       if @runner.save
+        @runner.profile.image.attach(runner_params[:image])
         format.html { redirect_to profiles_path, notice: 'Profile was successfully created.' }
         format.json { render :index, status: :created, location: @runner }
       else
@@ -37,11 +36,9 @@ class RunnersController < ApplicationController
 
   def update
       @runner = Runner.find(params[:id])
-      @runner.update(runner_params)
-      @runner.image.attach(runner_params[:image]) if runner_params[:image] 
-      @runner.save
       respond_to do |format|
         if @runner.update(runner_params)
+          @runner.profile.image.attach(runner_params[:image]) if runner_params[:image] 
           format.html { redirect_to root_path, notice: 'Profile was successfully updated.' }
           format.json { render :show, status: :ok, location: @runner }
         else
