@@ -15,7 +15,7 @@
         <%= render "layouts/header" %>
     </header>
 
-    <section>
+    <section >
     <%= search_form_for @search do |f| %>
 
     <div class="search-header"><h1>Seach for Runners</h1></div>
@@ -44,22 +44,22 @@
     </div>
 
     <div class="table-container"></div>
-    <table class="table is-bordered is-narrow is-fullwidth">
+    <table class="table is-bordered is-narrow ">
         <thead>
             <tr>
+                <th>profile-pic</th>
                 <th>username</th>
                 <th>pace</th>
                 <th>gender</th>
-                <th>profile-pic</th>
             </tr>
         </thead>
         <tbody>
             <% @profile.each do |profile| %>
             <tr>
+                <td><%= profile.image.attached? ? image_tag(profile.image, height: 75, width: 75) : "" %></td>
                 <td><%= profile.username %>
                 <td><%= profile.pace %>
                 <td><%= profile.gender %>
-                <td><%= profile.image.attached? ? image_tag(profile.image, height: 20) : "" %></td>
             </tr>
             <% end %>
         </tbody>

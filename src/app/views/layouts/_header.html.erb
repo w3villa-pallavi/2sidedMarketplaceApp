@@ -30,17 +30,18 @@
             <li>
                 <% if current_runner %>
                 <%= link_to "SIGN OUT", destroy_runner_session_path, method: :delete, class: "links" %>
+              </li>
                 <% else %>
+            <li>
                 <%= link_to "SIGN IN", new_runner_session_path, class: "links" %>
-                <br>
+              </li>
+              <li>
                 <%= link_to "SIGN UP", new_runner_registration_path, class: "links" %>
-                <% end %>
             </li>
+            <% end %>
         </ul>
       </div>
     </nav>
-
-
     <%= yield %>
   </body>
 </html>

@@ -53,6 +53,7 @@ class RunnersController < ApplicationController
 
   def delete
     @runner = Runner.find(params[:id])
+
   end
   
   def destroy
