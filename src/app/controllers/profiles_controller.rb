@@ -60,8 +60,12 @@ class ProfilesController < ApplicationController
 
 
   def index
+    @profile = Profile.all
+    if params[:q].present?
+      p params[:q]
+      @profile = Profile.all
+    end
     @search = Profile.search(params[:q])
-    @profile = @search.result
   end
 
   def show
