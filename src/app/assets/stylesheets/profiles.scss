@@ -3,22 +3,38 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-body {
-    background: rgba(203, 190, 14, 0.322);
-    
+.profile-body {
+    background: rgba(203, 190, 14, 0.199);
+    background-blend-mode: soft-light;
+    background-image: url(image_path("individual_runner.jpg"));
+    background-size: cover;
+    background-image: center center;
     height: 100vh;
+
     section {
         color: black;
         .field-wrapper {
-            background:rgba(128, 128, 128, 0.603);
-            padding: 20px;
-            border-style: solid;
-            border-width: 2px;
+           
             display: grid;
-            justify-content: center;
-            width: 200px;
-            margin-left: 50px;
-            margin-top: 50px;
+            grid-template-columns: 50% 50%;
+            height: 90vh;
+            .runner-info-box {
+                justify-self: center;
+                align-self: center;
+                padding: 50px;
+                h3 {
+                    font-size: 3rem;
+                }
+                img {
+                    border-style: solid;
+                    border-width: 2px;
+                    height: 200px;
+                }
+                border-style: solid;
+                border-width: 2px;
+                background: rgb(192, 184, 77);
+    
+            }
             .actions {
                 background: rgb(203, 190, 14);
             }

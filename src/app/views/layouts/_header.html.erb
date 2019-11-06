@@ -20,12 +20,7 @@
             <li><%= link_to("ABOUT US", pages_about_us_path, class: "links") %></li>
             <%if current_runner %>
             <li><%= link_to("EDIT PROFILE", edit_runner_path(current_runner), class: "links") %></li>
-            <!-- <li><% if runner_signed_in?%>
-              <%= current_runner.profile.username %>
-              <% else %>
-              <p></p>
-              <% end %></li> -->
-              <%= link_to("#{current_runner.profile.username}'s PROFILE", runner_path(current_runner), class: "links") %></li>
+            <li><%= link_to("MY PROFILE", runner_path(current_runner), class: "links") %></li>
             <% end %> 
             <li>
                 <% if current_runner %>

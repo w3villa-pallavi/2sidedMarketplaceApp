@@ -8,17 +8,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="" />
   </head>
-  <body>
+  <body class="profile-body">
     <header>
       <%= render "layouts/header" %>
     </header>
-    <section>
+    <section class="profile-show-background">
       <div class="field-wrapper">
-    <h3><strong>Username:</strong><%= @profile.username %></h3>
-    <h3>Age: <%= @profile.age %></h3>
-    <h3>Gender: <%= @profile.gender %></h3>
-    <h3>Pace: <%= @profile.pace %></h3>
-    <%= @profile.image.attached? ? image_tag(@profile.image, height: 40) : "" %>
+        <div class="runner-info-box">
+            <h3>RUNNER:<%= @profile.username %></h3>
+            <h3>AGE: <%= @profile.age %></h3>
+            <h3>GENDER: <%= @profile.gender %></h3>
+            <h3>PACE: <%= @profile.pace %></h3>
+            <% if  @profile.image.attached? %>
+            <%= image_tag @profile.image %> 
+            <% else %>
+            <%= image_tag('upload_picture.png', height: 40)%>
+            <% end %>
+            <!-- <%= @profile.image.attached? ? image_tag(@profile.image, height: 40) : "" %> -->
+        </div>
+        <div class="runner-info-alt-box">.</div>
   </div>
   </section>
   </body>
